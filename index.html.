@@ -1,0 +1,28 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .progress-container {
+        width: 80%;
+        margin: auto;
+        border: 1px solid #ccc;
+    }
+
+    .progress-bar {
+        width: 0%;
+        height: 30px;
+        background-color: green;
+        color: white;
+        line-height: 30px;
+    }
+
+    #status {
+        font-size: 32px; /* Bigger success text */
+        font-weight: bold;
+        color: green;
+        margin-top: 20px;
+    }
+</style>
