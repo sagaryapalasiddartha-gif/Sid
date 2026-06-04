@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfer Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .progress-container {
+            width: 80%;
+            margin: auto;
+            border: 1px solid #ccc;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 30px;
+            background-color: green;
+            color: white;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Downloading Data...</h2>
+
+<div class="progress-container">
+    <div class="progress-bar" id="bar">0%</div>
+</div>
+
+<p id="status"></p>
+
+<script>
+let progress = 0;
+let bar = document.getElementById("bar");
+let status = document.getElementById("status");
+
+let interval = setInterval(() => {
+    if (progress < 99) {
+        progress++;
+        bar.style.width = progress + "%";
+        bar.textContent = progress + "%";
+    } else {
+        clearInterval(interval);
+        status.textContent = "Data transferred successfully.";
+    }
+}, 50);
+</script>
+
+</body>
+</html>
