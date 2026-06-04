@@ -1,0 +1,17 @@
+<script>
+let progress = 0;
+const bar = document.getElementById("bar");
+const status = document.getElementById("status");
+
+const interval = setInterval(() => {
+    progress++;
+
+    bar.style.width = progress + "%";
+    bar.textContent = progress + "%";
+
+    if (progress >= 100) {
+        clearInterval(interval);
+        status.innerHTML = "<span style='font-size:40px;font-weight:bold;color:green;'>Data transferred successfully.</span>";
+    }
+}, 50);
+</script>
