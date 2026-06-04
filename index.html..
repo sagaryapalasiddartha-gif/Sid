@@ -1,0 +1,44 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .progress-container {
+        width: 80%;
+        margin: auto;
+        border: 1px solid #ccc;
+    }
+
+    .progress-bar {
+        width: 0%;
+        height: 30px;
+        background-color: green;
+        color: white;
+        line-height: 30px;
+    }
+
+    #status {
+        font-size: 32px;
+        font-weight: bold;
+        color: green;
+        margin-top: 20px;
+    }
+</style>
+<script>
+let progress = 0;
+let bar = document.getElementById("bar");
+let status = document.getElementById("status");
+
+let interval = setInterval(() => {
+    if (progress < 100) {
+        progress++;
+        bar.style.width = progress + "%";
+        bar.textContent = progress + "%";
+    } else {
+        clearInterval(interval);
+        status.textContent = "Data transferred successfully.";
+    }
+}, 50);
+</script>
